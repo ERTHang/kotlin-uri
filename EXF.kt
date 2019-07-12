@@ -26,6 +26,7 @@ fun main(args: Array<String>) {
             else{
                 if (difs[0] - g == 0.toLong()){
                     points += 1
+                    g -= (difs[0])
                     difs.removeAt(0)
                 }
                 else{
