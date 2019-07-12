@@ -1,14 +1,14 @@
-
-fun main() {
-    var difs : MutableList<Int>
+fun main(args: Array<String>) {
+    var difs : MutableList<Long>
+    difs = mutableListOf()
     while(true) {
         val aux = readLine()
         aux?: break
         var points = 0
-        var (n, g) = aux.split(' ').map(String::toInt)
-        difs = mutableListOf()
+        var (n, g) = aux.split(' ').map(String::toLong)
+        difs.clear()
         for (i in 1..n){
-            val (a, b) = readLine()!!.split(' ').map(String::toInt)
+            val (a, b) = readLine()!!.split(' ').map(String::toLong)
             if (a>b){
                 points += 3
             }
@@ -24,7 +24,7 @@ fun main() {
                 difs.removeAt(0)
             }
             else{
-                if (difs[0] - g == 0){
+                if (difs[0] - g == 0.toLong()){
                     points += 1
                     g -= (difs[0] + 1)
                     difs.removeAt(0)
